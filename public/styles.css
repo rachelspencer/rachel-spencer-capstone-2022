@@ -1,0 +1,12 @@
+nav {
+    height: 50px;
+    background-color: rgb(147, 198, 192);
+}
+
+ul {
+    margin: 0px;
+}
+.crumb {
+	margin-right: 10em;
+	display: inline;
+}

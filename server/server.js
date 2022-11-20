@@ -3,13 +3,14 @@ const app = express();
 const cors = require('cors');
 
 const { appData } = require('./db.json')
-const { getAppData, createAppData } = require('./controller')
+const { getAppData, createAppData, deleteAppData } = require('./controller')
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/appData', getAppData);
 app.post('/appData', createAppData);
+app.delete('/appData', deleteAppData);
 
 const SERVER_PORT = 4005
 
