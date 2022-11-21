@@ -19,7 +19,29 @@
     </ul>
 </nav>
 <body>
-   
-    <script src="index.js"></script>
+    <header>
+        <h1>Activities</h1>
+        <h2>Add an activity</h2>
+    </header>
+<main>
+    <form>
+        <input
+            type="text"
+            id="name"
+            placeholder="Activity Name">
+        <input
+            type="text"
+            id="website-URL"
+            placeholder="Website URL">
+        <input
+            type="text"
+            id="image-URL"
+            placeholder="Image URL">
+        <button type="submit" id="add-item-btn"><span>Add Activity</span></button>
+    </form>
+    <section type="text" id="items-container"></section>
+</main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="activities.js"></script>
 </body>
 </html>
