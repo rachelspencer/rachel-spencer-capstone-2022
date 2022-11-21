@@ -2,19 +2,19 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-const { appData } = require('./db.json')
-const { getAppData, createAppData, deleteAppData } = require('./controller')
+const db = require('./db.json')
+const { getItems, createItem, deleteItem } = require('./controller')
 
 app.use(cors());
 app.use(express.json());
 
-app.get('/appData', getAppData);
-app.post('/appData', createAppData);
-app.delete('/appData', deleteAppData);
+app.get(`/api/items`, getItems);
+app.post(`/api/items`, createItem);
+app.delete(`/api/item/:id`, deleteItem);
 
 const SERVER_PORT = 4005
 
 app.listen(SERVER_PORT, () => {
-    console.log('hello', appData),
+    // console.log('hello', db),
     console.log(`Port running on ${SERVER_PORT}.`)
 });

@@ -1,19 +1,19 @@
-const { appData } = require('./db.json')
+const  items = require('./db.json')
 let globalID = 31;
 
-const getAppData = (req, res) => {
-    res.status(200).send(appData)
-    err.status(400).send(console.log(err))
+const getItems = (req, res) => {
+    // const category = req.params.category;
+    res.status(200).send(items)
 };
 
-const createAppData = (req, res) => {
+const createItem = (req, res) => {
     const { id, category, name, websiteURL, imageURL } = req.body;
 
-    if (!id, !category, !name, !websiteURL, !imageURL) {
+    if (!name, !websiteURL, !imageURL) {
         res.status(400).send('Missing data.')
     } else {
         const { id, category, name, websiteURL, imageURL } = req.body;
-        appData.push({
+        items.push({
             id: globalID,
             category,
             name,
@@ -23,17 +23,17 @@ const createAppData = (req, res) => {
             liked: false,
         });
         globalID++
-        res.status(200).send(appData);
+        res.status(200).send(items);
     }
 }
 
-const deleteAppData = (req, res) => {
-    const appData = require('./db.json')
+const deleteItem = (req, res) => {
+    const items = require('./db.json')
     const { id } = req.params;
     for (i = 0; i < appData.length; i++) {
-        if (appData[i].id === +id) {
-            appData.splice(i, 1)
-            return res.status(200).send(appData)
+        if (items[i].id === +id) {
+            items.splice(i, 1)
+            return res.status(200).send(items)
         }
 
     }
@@ -41,7 +41,7 @@ const deleteAppData = (req, res) => {
 }
 
 module.exports = {
-    getAppData,
-    createAppData,
-    deleteAppData
+    getItems,
+    createItem,
+    deleteItem
 }
