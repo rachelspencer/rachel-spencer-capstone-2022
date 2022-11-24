@@ -1,16 +1,28 @@
 const  items = require('./db.json')
 let globalID = 31;
 
-const getItems = (req, res) => {
-    // const category = req.params.category;
+const getActivityItems = (req, res) => {
+    const category = req.params.category;
+    const items = category.filter('activities')
     res.status(200).send(items)
 };
+
+// const updateItem = (req, res) => {
+//     // get item id from request body
+//     const id = ;
+
+//     // find item in array with matching id (Array.find())
+
+//     // toggle completed property of that item
+
+//     // send back response with items array
+// }
 
 const createItem = (req, res) => {
     const { id, category, name, websiteURL, imageURL } = req.body;
 
     if (!name, !websiteURL, !imageURL) {
-        res.status(400).send('Missing data.')
+        res.status(400).send('Charlee is cool.')
     } else {
         const { id, category, name, websiteURL, imageURL } = req.body;
         items.push({
@@ -41,7 +53,7 @@ const deleteItem = (req, res) => {
 }
 
 module.exports = {
-    getItems,
+    getActivityItems,
     createItem,
     deleteItem
 }
