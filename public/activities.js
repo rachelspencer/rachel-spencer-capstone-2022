@@ -6,11 +6,12 @@ const baseURL = `http://localhost:4005/api/items`;
 const itemsCallBack = ({data: items}) => displayItems(items)
 const errCallBack = err => console.log(err.response.data)
 
-const getItems = () => axios.get(baseURL).then(itemsCallBack).catch(errCallBack);
+const getActivityItems = (body) => axios.get(baseURL, {params: {category:'activities'}}).then(itemsCallBack).catch(errCallBack);
 const createItem = (body) => {
     console.log('body', body);
     axios.post(baseURL, body).then(itemsCallBack).catch(errCallBack);
 }
+// const updateItem = (id) => axios.put()
 
 function submitHandler(e) {
     e.preventDefault()
@@ -41,9 +42,14 @@ function createItemCard(item) {
     itemCard.classList.add('item-card')
 
     
-    itemCard.innerHTML = `<img alt="activity cover" src=${item.imageURL} class="activity-cover"/>
-    <p class="activity-title">${item.name}</p>
-    <p class="activity-url">${item.websiteURL}</p>`
+    itemCard.innerHTML = `<img alt="item cover" src=${item.imageURL} class="item-cover"/>
+    <p class="item-title">${item.name}</p>
+    <p class="item-url">${item.websiteURL}</p>
+    <label class="toggle" for="myToggle">
+        <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
+        <div class="toggle__fill"></div>
+    </label>
+    `
 
     itemsContainer.appendChild(itemCard)
 }
