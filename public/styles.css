@@ -50,6 +50,15 @@ h2 {
     margin-block-start: 10px;
 }
 
+h3 {
+	color: black;
+	font-family:'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+	position:absolute;
+
+}
+
 body {
 	background-color: rgb(147, 198, 192, 0.8);
 }
@@ -112,6 +121,7 @@ input[type='text'] {
     border-radius: 12px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.30);
 }
 
 .item-cover {
@@ -121,6 +131,7 @@ input[type='text'] {
 	object-fit: cover;
     border-radius: 12px;
 	margin-top: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.30);
 	
 }
 
@@ -135,7 +146,7 @@ input[type='text'] {
 }
 
 .toggle {
-   --width: 15px;
+   --width: 50px;
    --height: calc(var(--width) / 2);
    --border-radius: calc(var(--height) / 2);
    display: inline-block;
@@ -165,10 +176,13 @@ input[type='text'] {
 	top: 0;
 	left: 0;
 	height: var(--height);
-	width: var(var(--width));
-	background-color: white;
+	width: var(--height);
+	background: white;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-	border-radius: var(border-radius);
+	border-radius: var(--border-radius);
+	transition: transfrom 0.2s;
+}
 
-
+.toggle__input:checked ~ .toggle__fill::after {
+	transform: translateX(var(--height));
 }

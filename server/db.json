@@ -1,7 +1,7 @@
 [
     {
         "id": 1, 
-        "category": "adventure",
+        "category": "activities",
         "name": "Skyrail",
         "websiteURL":"https://www.skyrail.com.au/",
         "imageURL": "https://businesseventscairns.org.au/wp-content/uploads/2018/10/Skyrail_0002-1024x585.jpg",
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "category": "adventure",
+        "category": "activities",
         "name": "Mossman Gorge",
         "websiteURL": "https://www.mossmangorge.com.au/",
         "imageURL": "https://www.shoreexcursionsgroup.com/img/tour/AZPDPVTMOSS-2.jpg",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "category": "adventure",
+        "category": "activities",
         "name": "Green Island",
         "websiteURL": "https://www.green-island.com.au/",
         "imageURL": "https://www.queensland.com/us/en/plan-your-holiday/itineraries/48-hours-on-green-island.thumb.800.480.png",
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "category": "adventure",
+        "category": "activities",
         "name": "Paronella Park",
         "websiteURL": "https://www.green-island.com.au/",
         "imageURL": "https://campaustralia.files.wordpress.com/2015/09/coryrossiter4.jpg",
@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "category": "adventure",
+        "category": "activities",
         "name": "Kuranda Scenic Railway",
         "websiteURL": "https://www.ksr.com.au/Pages/Default.aspx",
         "imageURL": "https://www.carnival.com/shop/medias/947003-img5.jpg?context=bWFzdGVyfGltYWdlc3wyNTc2Njh8aW1hZ2UvanBlZ3xoNTUvaDdiLzg5MzkwNTE4NzYzODIvOTQ3MDAzLWltZzUuanBnfGNiNTBlM2FlODcyM2VjZDgxMjI1YTdmODgwZGU5Zjk1MjBlMGY3NDYyMzQ1OGM4MmNlZWU2NmE5MTY5MmJlNjg&w=1232&h=647&resize_profile=pdphero",
@@ -46,7 +46,7 @@
     },
     {
         "id": 6,
-        "category": "adventure",
+        "category": "activities",
         "name": "Sugar World",
         "websiteURL": "https://www.sugarworldwaterpark.com.au/",
         "imageURL": "https://bookmestatic.net.nz/bookme-review-images/reviews/f6fb6893-86fd-44d7-ae51-22f07a126dc7.jpg",
@@ -55,7 +55,7 @@
     },
     {
         "id": 7,
-        "category": "adventure",
+        "category": "activities",
         "name": "Drive to Port Douglas",
         "websiteURL": "https://goo.gl/maps/tQRoMNEXZzJ3UUb9A",
         "imageURL": "https://content.api.news/v3/images/bin/a4aa0e2c25438ebd70ddcc95ea5b4672",
@@ -64,7 +64,7 @@
     },
     {
         "id": 8,
-        "category": "adventure",
+        "category": "activities",
         "name": "Esplanarde Walks",
         "websiteURL": "https://www.cairnsesplanade.com/",
         "imageURL": "https://bq.org.au/wp-content/uploads/2020/07/cairns-esplanade.jpeg",
@@ -73,7 +73,7 @@
     },
     {
         "id": 9,
-        "category": "adventure",
+        "category": "activities",
         "name": "Pig Pens Wharf",
         "websiteURL": null,
         "imageURL": "https://live-production.wcms.abc-cdn.net.au/007e5c9f511967dc4211bc35125f9933?impolicy=wcms_crop_resize&cropH=360&cropW=640&xPos=0&yPos=0&width=862&height=485",
@@ -82,7 +82,7 @@
     },
     {
         "id": 10,
-        "category": "adventure",
+        "category": "activities",
         "name": "Pig Pens Wharf",
         "websiteURL": "https://www.tobrukmemorialpool.com.au/",
         "imageURL": "https://www.commercialaquatics.com.au/wp-content/uploads/2016/10/Tobruk-Pool-6.jpg",
@@ -102,7 +102,7 @@
         "id": 12,
         "category": "must-try",
         "name": "Camp Oven Roast",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "https://www.snowys.com.au/blog/wp-content/uploads/2017/04/Camping-oven-Coleman.jpg",
         "completed": false,
         "liked": false
@@ -111,7 +111,7 @@
         "id": 13,
         "category": "must-try",
         "name": "Jaffles",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "https://img.delicious.com.au/TilWOR1U/del/2018/10/chicken-parfait-sage-and-caramelised-onion-jaffle-89133-2.jpg",
         "completed": false,
         "liked": false
@@ -120,7 +120,7 @@
         "id": 14,
         "category": "must-try",
         "name": "Crumpets",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "https://img.taste.com.au/vyCV2b0K/taste/2016/11/gluten-free-crumpets-98679-1.jpeg",
         "completed": false,
         "liked": false
@@ -138,8 +138,8 @@
         "id": 16,
         "category": "must-try",
         "name": "Scones with jam and cream",
-        "websiteURL": null,
-        "imageURL": "https://content.api.news/v3/images/bin/cd2a5c3a62e92895fe85d56222a082fa",
+        "websiteURL": "",
+        "imageURL": "https://images.eatsmarter.com/sites/default/files/styles/max_size/public/scones-with-raspberry-jam-and-clotted-cream-584688.jpg",
         "completed": false,
         "liked": false
     },
@@ -147,7 +147,7 @@
         "id": 17,
         "category": "must-try",
         "name": "Custard slice",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "https://www.wandercooks.com/wp-content/uploads/2021/01/vanilla-slice-recipe-lattice-biscuits-ft-1.jpg",
         "completed": false,
         "liked": false
@@ -156,7 +156,7 @@
         "id": 18,
         "category": "must-try",
         "name": "Golden Syrup dumplings",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "https://whisk-res.cloudinary.com/image/upload/g_auto,g_auto,c_fill,q_60,f_auto,h_600,w_800/v1612026030/v3/user-recipes/hjjvrgda9jwlyx3ozxla.jpg",
         "completed": false,
         "liked": false
@@ -165,7 +165,7 @@
         "id": 19,
         "category": "must-try",
         "name": "Dads prawns",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "https://www.mashed.com/img/gallery/types-of-prawn-and-how-to-eat-them/intro-1657430281.jpg",
         "completed": false,
         "liked": false
@@ -174,14 +174,14 @@
         "id": 20,
         "category": "must-try",
         "name": "Fish and Chips",
-        "websiteURL": null,
+        "websiteURL": "",
         "imageURL": "http://takeawaycairns.com/wp-content/uploads/2020/05/rsz_2fish_and_chips_at_dashs_takeaway_cairns.jpg",
         "completed": false,
         "liked": false
     },
     {
         "id": 21,
-        "category": "restaurant",
+        "category": "foodAndBev",
         "name": "Salt House",
         "websiteURL": "https://salthouse.com.au/",
         "imageURL": "https://i.pinimg.com/originals/02/f6/57/02f6578e7d96d6d835b7fa5c58fd6d5e.jpg",
@@ -190,7 +190,7 @@
     },
     {
         "id": 22,
-        "category": "restaurant",
+        "category": "foodAndBev",
         "name": "Dundees",
         "websiteURL": "https://www.dundees.com.au/",
         "imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/12/f8/a2/8d/boardwalk-dinning.jpg",
@@ -199,7 +199,7 @@
     },
     {
         "id": 23,
-        "category": "restaurant",
+        "category": "foodAndBev",
         "name": "Rattle n Hum",
         "websiteURL": "https://rattlenhum.com.au/cairns/",
         "imageURL": "https://www.visitportdouglasdaintree.com/images/_1200x600_crop_center-center_none/Rattle-hum.jpg",
@@ -208,7 +208,7 @@
     },
     {
         "id": 24,
-        "category": "restaurant",
+        "category": "foodAndBev",
         "name": "Sushi Train",
         "websiteURL": "http://www.sushitrain.com.au/",
         "imageURL": "https://www.pedestrian.tv/wp-content/uploads/2019/09/cheese-sushi-train-fb.png?quality=80&resize=1280,720",
@@ -217,7 +217,7 @@
     },
     {
         "id": 25,
-        "category": "restaurant",
+        "category": "foodAndBev",
         "name": "Thai Coins",
         "websiteURL": "https://www.thaicoinscairns.com.au/menu",
         "imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/03/2f/d9/5e/delicious-whole-fish.jpg",
@@ -226,7 +226,7 @@
     },
     {
         "id": 26,
-        "category": "bar",
+        "category": "foodAndBev",
         "name": "Three Wolves",
         "websiteURL": "https://www.threewolves.com.au/",
         "imageURL": "https://www.tropicnow.com.au/fileadmin/user_upload/articles/2020/October/threewolves.JPG",
@@ -235,7 +235,7 @@
     },
     {
         "id": 27,
-        "category": "bar",
+        "category": "foodAndBev",
         "name": "The Pier bar",
         "websiteURL": "https://www.thepierbar.com.au",
         "imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/07/b0/47/21/the-pier-bar-grill.jpg",
@@ -244,7 +244,7 @@
     },
     {
         "id": 28,
-        "category": "bar",
+        "category": "foodAndBev",
         "name": "Hemingways Brewery",
         "websiteURL": "https://www.hemingwaysbrewery.com/",
         "imageURL": "https://www.hemingwaysbrewery.com/fileadmin/_processed_/4/3/csm_VCW0819_Fri_night_6_web_14c005c49d.jpg",
@@ -253,7 +253,7 @@
     },
     {
         "id": 29,
-        "category": "bar",
+        "category": "foodAndBev",
         "name": "The Conservatory bar",
         "websiteURL": "https://www.theconservatorybar.com/",
         "imageURL": "https://cairnscalendar.com.au/wp-content/uploads/2021/01/The-Conservatory-Bar-2.jpg",
@@ -262,10 +262,10 @@
     },
     {
         "id": 30,
-        "category": "bar",
+        "category": "foodAndBev",
         "name": "Roccos",
         "websiteURL": "https://www.crystalbrookcollection.com/riley/rocco",
-        "imageURL": "https://i.imgur.com/VaO3eM5.png",
+        "imageURL":"https://content.api.news/v3/images/bin/0c259d10c2e2e13672f58658dd5f0b33",
         "completed": false,
         "liked": false
     }

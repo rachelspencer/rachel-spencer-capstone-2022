@@ -19,7 +19,29 @@
     </ul>
 </nav>
 <body>
-   
-    <script src="index.js"></script>
+    <header>
+        <h1>Must-Tries</h1>
+        <h2>Add an Aussie must-try</h2>
+    </header>
+<main>
+    <form>
+        <input
+            type="text"
+            id="name"
+            placeholder="Must-try">
+        <input
+            type="text"
+            id="website-URL"
+            placeholder="Website URL">
+        <input
+            type="text"
+            id="image-URL"
+            placeholder="Image URL">
+        <button id="add-item-btn"><span>Add</span></button>
+    </form>
+    <section type="text" id="items-container"></section>
+</main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="must-tries.js"></script>
 </body>
 </html>

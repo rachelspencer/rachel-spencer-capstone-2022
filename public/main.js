@@ -11,6 +11,8 @@ const errCallBack = err => console.log(err.response.data)
 
 
 const getActivityItems = () => axios.get(baseURL +  '/activities').then(itemsCallBack).catch(errCallBack);
+const getFoodAndBevItems = () => axios.get(baseURL +  '/foodAndBev').then(itemsCallBack).catch(errCallBack);
+const getMustTryItems = () => axios.get(baseURL +  '/must-try').then(itemsCallBack).catch(errCallBack);
 const createItem = (body) => axios.post(baseURL, body).then(itemsCallBack).catch(errCallBack)
 //const updateToggleStatus = (id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
 
@@ -61,4 +63,15 @@ function displayItems(arr) {
 }
 
 form.addEventListener('submit', submitHandler)
-getItemsByCategory()
+
+module.exports {
+    itemsCallBack,
+    errCallBack,
+    getActivityItems,
+    getFoodAndBevItems,
+    getMustTryItems,
+    createItem,
+    submitHandler,
+    createItemCard,
+    displayItems
+}

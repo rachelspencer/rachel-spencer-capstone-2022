@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food & Bev</title>
+    <title>Food and Bev</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Merriweather:ital@0;1&family=Noto+Serif+Georgian:wght@200;300;500&family=Space+Mono&family=Work+Sans:wght@800&display=swap" rel="stylesheet">
@@ -19,7 +19,29 @@
     </ul>
 </nav>
 <body>
-   
-    <script src="index.js"></script>
+    <header>
+        <h1>Food and Bev</h1>
+        <h2>Add a bar or restaurant</h2>
+    </header>
+<main>
+    <form>
+        <input
+            type="text"
+            id="name"
+            placeholder="Restaurant/Rar Name">
+        <input
+            type="text"
+            id="website-URL"
+            placeholder="Website URL">
+        <input
+            type="text"
+            id="image-URL"
+            placeholder="Image URL">
+        <button id="add-item-btn"><span>Add</span></button>
+    </form>
+    <section type="text" id="items-container"></section>
+</main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="food_and_bev.js"></script>
 </body>
 </html>

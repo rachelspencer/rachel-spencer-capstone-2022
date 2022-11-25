@@ -1,10 +1,11 @@
 const  items = require('./db.json')
 let globalID = 31;
 
-const getActivityItems = (req, res) => {
+const getItemsByCategory = (req, res) => {
+    console.log("Hello", req.params)
     const category = req.params.category;
-    const items = category.filter('activities')
-    res.status(200).send(items)
+    const filteredItems = items.filter(item => item.category === category)
+    res.status(200).send(filteredItems)
 };
 
 // const updateItem = (req, res) => {
@@ -22,7 +23,7 @@ const createItem = (req, res) => {
     const { id, category, name, websiteURL, imageURL } = req.body;
 
     if (!name, !websiteURL, !imageURL) {
-        res.status(400).send('Charlee is cool.')
+        res.status(400).send('Data is missing.')
     } else {
         const { id, category, name, websiteURL, imageURL } = req.body;
         items.push({
@@ -53,7 +54,7 @@ const deleteItem = (req, res) => {
 }
 
 module.exports = {
-    getActivityItems,
+    getItemsByCategory,
     createItem,
     deleteItem
 }

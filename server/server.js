@@ -3,12 +3,13 @@ const app = express();
 const cors = require('cors');
 
 const db = require('./db.json')
-const { getActivityItems, createItem, deleteItem } = require('./controller')
+const { getItemsByCategory, createItem, deleteItem } = require('./controller')
 
 app.use(cors());
 app.use(express.json());
 
-app.get(`/api/items/:category`, getActivityItems);
+
+app.get(`/api/items/:category`, getItemsByCategory);
 // app.put(url, updateItem);
 app.post(`/api/items`, createItem);
 app.delete(`/api/item/:id`, deleteItem);

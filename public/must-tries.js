@@ -9,8 +9,7 @@ const itemsCallBack = (res) => displayItems(res.data)
 const errCallBack = err => console.log(err.response.data)
 //const toggleStatusCallBack = 
 
-
-const getActivityItems = () => axios.get(baseURL +  '/activities').then(itemsCallBack).catch(errCallBack);
+const getItemsByCategory = () => axios.get(baseURL +  '/must-try').then(itemsCallBack).catch(errCallBack);
 const createItem = (body) => axios.post(baseURL, body).then(itemsCallBack).catch(errCallBack)
 //const updateToggleStatus = (id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
 
@@ -46,7 +45,6 @@ function createItemCard(item) {
     <label class="toggle" for="myToggle">
         <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
         <div class="toggle__fill"></div>
-        <h3>Been there, done that.</h3>
     </label>
     `
 
