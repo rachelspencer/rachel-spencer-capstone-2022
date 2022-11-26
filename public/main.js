@@ -1,77 +1,63 @@
-console.log("connected");
-
-const itemsContainer = document.querySelector('#items-container')
-const form = document.querySelector('form')
-
 const baseURL = `http://localhost:4005/api/items`;
 
-const itemsCallBack = (res) => displayItems(res.data)
-const errCallBack = err => console.log(err.response.data)
-//const toggleStatusCallBack = 
+// API Calls
+export const getItemsByCategory = (category) => axios.get(baseURL + "/" + category);
+const updateToggleStatus = (id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
+const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body);
 
-
-const getActivityItems = () => axios.get(baseURL +  '/activities').then(itemsCallBack).catch(errCallBack);
-const getFoodAndBevItems = () => axios.get(baseURL +  '/foodAndBev').then(itemsCallBack).catch(errCallBack);
-const getMustTryItems = () => axios.get(baseURL +  '/must-try').then(itemsCallBack).catch(errCallBack);
-const createItem = (body) => axios.post(baseURL, body).then(itemsCallBack).catch(errCallBack)
-//const updateToggleStatus = (id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
-
-function submitHandler(e) {
+// Event handlers
+export function submitHandler(e, category, onSuccess, onFail) {
     e.preventDefault()
-    console.log('form', form);
 
     let name = document.querySelector('#name')
-    let websiteURL = document.querySelector('#website-URL')
+    let recommendedBy = document.querySelector('#recommended-by')
     let imageURL = document.querySelector('#image-URL')
 
     let bodyObj = {
         name: name.value,
-        websiteURL: websiteURL.value,
+        recommendedBy: recommendedBy.value,
         imageURL: imageURL.value,
     }
 
-    createItem(bodyObj);
+    createItem(category, bodyObj).then(onSuccess).catch(onFail);
     
     name.value = ''
-    websiteURL.value = ''
+    recommendedBy.value = ''
     imageURL.value = ''
 }
 
-function createItemCard(item) {
+// Display functions
+function createItemCard(item, containerElement) {
     const itemCard = document.createElement('div')
     itemCard.classList.add('item-card')
 
-    
     itemCard.innerHTML = `<img alt="item cover" src=${item.imageURL} class="item-cover"/>
-    <p class="item-title">${item.name}</p>
-    <p class="item-url">${item.websiteURL}</p>
-    <label class="toggle" for="myToggle">
-        <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
-        <div class="toggle__fill"></div>
-        <h3>Been there, done that.</h3>
-    </label>
+    <div class="item-details"
+        <section id="item-title"
+            <p>${item.name}</p>
+        </section>
+        <section id="item-recommend"
+            <p><span>Recommended by: </span>${item.recommendedBy}</p>
+        </section>
+        <div class="status-section">
+            <label class="toggle" for="myToggle">
+            <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
+                <div class="toggle__fill"></div>
+            </label>
+            <h3>Been there, done that</h3>
+        </div>
+        
+        <button class="delete-item-btn" onclick="deleteItem(${item.id})">x</button>
+        
+    </div>
     `
-
-    itemsContainer.appendChild(itemCard)
+    containerElement.appendChild(itemCard)
 }
 
-function displayItems(arr) {
-    itemsContainer.innerHTML = ``
+export function displayItems(arr, containerElement) {
+    containerElement.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
-        createItemCard(arr[i])
+        createItemCard(arr[i], containerElement)
     }
 }
 
-form.addEventListener('submit', submitHandler)
-
-module.exports {
-    itemsCallBack,
-    errCallBack,
-    getActivityItems,
-    getFoodAndBevItems,
-    getMustTryItems,
-    createItem,
-    submitHandler,
-    createItemCard,
-    displayItems
-}

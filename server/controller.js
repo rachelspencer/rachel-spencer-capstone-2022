@@ -2,7 +2,6 @@ const  items = require('./db.json')
 let globalID = 31;
 
 const getItemsByCategory = (req, res) => {
-    console.log("Hello", req.params)
     const category = req.params.category;
     const filteredItems = items.filter(item => item.category === category)
     res.status(200).send(filteredItems)
@@ -20,39 +19,35 @@ const getItemsByCategory = (req, res) => {
 // }
 
 const createItem = (req, res) => {
-    const { id, category, name, websiteURL, imageURL } = req.body;
+    const { id, name, recommendedBy, imageURL } = req.body;
+    const { category } = req.params;
 
-    if (!name, !websiteURL, !imageURL) {
+    if (!name, !recommendedBy, !imageURL) {
         res.status(400).send('Data is missing.')
     } else {
-        const { id, category, name, websiteURL, imageURL } = req.body;
+        const { id, name, recommendedBy, imageURL } = req.body;
         items.push({
             id: globalID,
             category,
             name,
-            websiteURL,
+            recommendedBy,
             imageURL,
             completed: false,
             liked: false,
         });
         globalID++
-        res.status(200).send(items);
+        res.status(200).send(items.filter(item => item.category === category));
     }
 }
 
 const deleteItem = (req, res) => {
-    const items = require('./db.json')
-    const { id } = req.params;
-    for (i = 0; i < appData.length; i++) {
-        if (items[i].id === +id) {
-            items.splice(i, 1)
-            return res.status(200).send(items)
-        }
-
-    }
-    res.status(400).send('Listing not found.')
+    const items = require('./db.json');
+    const id = req.params.id;
+    const itemToDelete = items.findIndex(item => item.id === +id);
+    items.splice(itemToDelete, 1)
+    return res.status(200).send(items)  
 }
-
+    
 module.exports = {
     getItemsByCategory,
     createItem,

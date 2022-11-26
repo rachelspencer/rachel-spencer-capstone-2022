@@ -11,8 +11,8 @@ app.use(express.json());
 
 app.get(`/api/items/:category`, getItemsByCategory);
 // app.put(url, updateItem);
-app.post(`/api/items`, createItem);
-app.delete(`/api/item/:id`, deleteItem);
+app.post(`/api/items/:category`, createItem);
+app.delete(`/api/items/:category/:id`, deleteItem);
 
 const SERVER_PORT = 4005
 

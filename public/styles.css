@@ -54,9 +54,7 @@ h3 {
 	color: black;
 	font-family:'Lato', sans-serif;
     font-weight: 300;
-    font-size: 15px;
-	position:absolute;
-
+    font-size: 18px;
 }
 
 body {
@@ -102,6 +100,7 @@ input[type='text'] {
 	color: #232323;
     font-weight: 300;
     font-size: 16px;
+    cursor: pointer;
 }
 
 #items-container {
@@ -113,7 +112,7 @@ input[type='text'] {
 .item-card {
     background-color: white;
     width: 300px;
-	height: 300px;
+	height: 380px;
     margin: 20px; 
     display: flex;
     flex-direction: column;
@@ -135,14 +134,38 @@ input[type='text'] {
 	
 }
 
-.item-title {
-    font-size: 18px;
-    margin: 5px 0;
+.item-details  {
+	width: 260px;
+    margin: 20px 20px;
 }
 
-.item-url {
-    font-size: 10px;
-    margin: 5px 0;
+#item-title {
+    font-family:'Lato', sans-serif;
+	color: #232323;
+    font-weight: 400;
+    font-size: 25px;
+   
+}
+#item-recommend {
+    font-family:'Lato', sans-serif;
+	color: #232323;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+#item-recommend {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.status-section {
+    font-family:'Lato', sans-serif;
+	color: #232323;
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .toggle {
@@ -151,6 +174,8 @@ input[type='text'] {
    --border-radius: calc(var(--height) / 2);
    display: inline-block;
    cursor: pointer;
+   margin-top: 5px;
+   margin-right:8px;
 }
 
 .toggle__input {
@@ -168,6 +193,7 @@ input[type='text'] {
 
 .toggle__input:checked ~ .toggle__fill {
 	background: rgb(71, 113, 112);
+    
 }
 
 .toggle__fill::after {
@@ -185,4 +211,18 @@ input[type='text'] {
 
 .toggle__input:checked ~ .toggle__fill::after {
 	transform: translateX(var(--height));
+}
+
+.delete-item-btn  {
+    background-color: rgb(175, 192, 192);
+    height: 25px;
+    width: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 4px;
+    font-family:'Lato', sans-serif;
+    color: #232323;
+    font-weight: 300;
+    font-size: 16px; 
+    cursor: pointer;
 }

@@ -4,7 +4,7 @@ import {
     submitHandler,
 } from './main.js';
 
-const ITEM_CATEGORY = 'must-try';
+const ITEM_CATEGORY = 'foodAndBev';
 
 const itemsContainer = document.querySelector('#items-container');
 const form = document.querySelector('form');

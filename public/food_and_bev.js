@@ -1,3 +1,4 @@
+
 console.log("connected");
 
 const itemsContainer = document.querySelector('#items-container')
@@ -9,30 +10,28 @@ const itemsCallBack = (res) => displayItems(res.data)
 const errCallBack = err => console.log(err.response.data)
 //const toggleStatusCallBack = 
 
-
-//const getItemsByCategory = () => axios.get(baseURL +  '/bar').then(itemsCallBack).catch(errCallBack);
 const getItemsByCategory = () => axios.get(baseURL +  '/foodAndBev').then(itemsCallBack).catch(errCallBack);
 const createItem = (body) => axios.post(baseURL, body).then(itemsCallBack).catch(errCallBack)
-//const updateToggleStatus = (id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
+const deleteItem = (id) => axios.delete(`${baseURL}/${id}`).then(itemsCallBack).catch(errCallBack)
 
 function submitHandler(e) {
     e.preventDefault()
     console.log('form', form);
 
     let name = document.querySelector('#name')
-    let websiteURL = document.querySelector('#website-URL')
+    let recommendedBy = document.querySelector('#recommended-by')
     let imageURL = document.querySelector('#image-URL')
 
     let bodyObj = {
         name: name.value,
-        websiteURL: websiteURL.value,
+        recommendedBy: recommendedBy.value,
         imageURL: imageURL.value,
     }
 
     createItem(bodyObj);
     
     name.value = ''
-    websiteURL.value = ''
+    recommendedBy.value = ''
     imageURL.value = ''
 }
 
@@ -42,12 +41,24 @@ function createItemCard(item) {
 
     
     itemCard.innerHTML = `<img alt="item cover" src=${item.imageURL} class="item-cover"/>
-    <p class="item-title">${item.name}</p>
-    <p class="item-url">${item.websiteURL}</p>
-    <label class="toggle" for="myToggle">
-        <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
-        <div class="toggle__fill"></div>
-    </label>
+    <div class="item-details"
+        <section id="item-title"
+            <p>${item.name}</p>
+        </section>
+        <section id="item-recommend"
+            <p><span>Recommended by: </span>${item.recommendedBy}</p>
+        </section>
+        <div class="status-section">
+            <label class="toggle" for="myToggle">
+            <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
+                <div class="toggle__fill"></div>
+            </label>
+            <h3>Been there, done that</h3>
+        </div>
+        
+        <button class="delete-item-btn" onclick="deleteItem(${item.id})">x</button>
+        
+    </div>
     `
 
     itemsContainer.appendChild(itemCard)
