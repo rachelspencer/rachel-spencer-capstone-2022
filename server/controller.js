@@ -33,7 +33,6 @@ const createItem = (req, res) => {
             recommendedBy,
             imageURL,
             completed: false,
-            liked: false,
         });
         globalID++
         res.status(200).send(items.filter(item => item.category === category));
@@ -42,10 +41,10 @@ const createItem = (req, res) => {
 
 const deleteItem = (req, res) => {
     const items = require('./db.json');
-    const id = req.params.id;
+    const { category, id } = req.params;
     const itemToDelete = items.findIndex(item => item.id === +id);
     items.splice(itemToDelete, 1)
-    return res.status(200).send(items)  
+    return res.status(200).send(items.filter(item => item.category === category))  
 }
     
 module.exports = {

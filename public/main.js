@@ -1,12 +1,19 @@
 const baseURL = `http://localhost:4005/api/items`;
 
+const itemsContainer = document.querySelector('#items-container');
+
+// Promise handlers
+const successCallBack = (res) => displayItems(res.data);
+const errCallBack = err => console.log(err);
+
 // API Calls
-export const getItemsByCategory = (category) => axios.get(baseURL + "/" + category);
-const updateToggleStatus = (id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
-const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body);
+export const getItemsByCategory = (category) => axios.get(baseURL + "/" + category).then(successCallBack).catch(errCallBack);
+// const updateToggleStatus = (category, id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
+const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body).then(successCallBack).catch(errCallBack);
+const deleteItem = (category, id) => axios.delete(`${baseURL}/${category}/${id}`).then(successCallBack).catch(errCallBack)
 
 // Event handlers
-export function submitHandler(e, category, onSuccess, onFail) {
+export function submitHandler(e, category) {
     e.preventDefault()
 
     let name = document.querySelector('#name')
@@ -19,7 +26,7 @@ export function submitHandler(e, category, onSuccess, onFail) {
         imageURL: imageURL.value,
     }
 
-    createItem(category, bodyObj).then(onSuccess).catch(onFail);
+    createItem(category, bodyObj);
     
     name.value = ''
     recommendedBy.value = ''
@@ -27,7 +34,7 @@ export function submitHandler(e, category, onSuccess, onFail) {
 }
 
 // Display functions
-function createItemCard(item, containerElement) {
+function createItemCard(item) {
     const itemCard = document.createElement('div')
     itemCard.classList.add('item-card')
 
@@ -47,17 +54,19 @@ function createItemCard(item, containerElement) {
             <h3>Been there, done that</h3>
         </div>
         
-        <button class="delete-item-btn" onclick="deleteItem(${item.id})">x</button>
+        <button class="delete-item-btn">x</button>
         
     </div>
     `
-    containerElement.appendChild(itemCard)
+    const deleteButton = itemCard.getElementsByClassName("delete-item-btn")[0];
+    deleteButton.addEventListener('click', () => deleteItem(item.category, item.id));
+    itemsContainer.appendChild(itemCard)
 }
 
-export function displayItems(arr, containerElement) {
-    containerElement.innerHTML = ``
+export function displayItems(arr) {
+    itemsContainer.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
-        createItemCard(arr[i], containerElement)
+        createItemCard(arr[i])
     }
 }
 

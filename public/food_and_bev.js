@@ -12,7 +12,7 @@ const errCallBack = err => console.log(err.response.data)
 
 const getItemsByCategory = () => axios.get(baseURL +  '/foodAndBev').then(itemsCallBack).catch(errCallBack);
 const createItem = (body) => axios.post(baseURL, body).then(itemsCallBack).catch(errCallBack)
-const deleteItem = (id) => axios.delete(`${baseURL}/${id}`).then(itemsCallBack).catch(errCallBack)
+// const deleteItem = (id) => axios.delete(`${baseURL}/${id}`).then(itemsCallBack).catch(errCallBack)
 
 function submitHandler(e) {
     e.preventDefault()
