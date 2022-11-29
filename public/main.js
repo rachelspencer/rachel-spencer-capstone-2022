@@ -8,9 +8,15 @@ const errCallBack = err => console.log(err);
 
 // API Calls
 export const getItemsByCategory = (category) => axios.get(baseURL + "/" + category).then(successCallBack).catch(errCallBack);
-// const updateToggleStatus = (category, id) => axios.put(toggleStatusCallBack).then(itemsCallBack).catch(errCallBack)
 const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body).then(successCallBack).catch(errCallBack);
-const deleteItem = (category, id) => axios.delete(`${baseURL}/${category}/${id}`).then(successCallBack).catch(errCallBack)
+const deleteItem = (category, id) => axios.delete(`${baseURL}/${category}/${id}`).then(successCallBack).catch(errCallBack);
+
+const updateItem = (e, category, id) => {
+    e.stopPropagation();
+    console.log(id)
+    console.log(e.target);
+    axios.put(`${baseURL}/${category}/${e.target.name}`).then(successCallBack).catch(errCallBack);
+}
 
 // Event handlers
 export function submitHandler(e, category) {
@@ -47,8 +53,8 @@ function createItemCard(item) {
             <p><span>Recommended by: </span>${item.recommendedBy}</p>
         </section>
         <div class="status-section">
-            <label class="toggle" for="myToggle">
-            <input checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle">
+            <label class="toggle" for="myToggle-${item.id}">
+                <input name=${item.id} "checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle-${item.id}">
                 <div class="toggle__fill"></div>
             </label>
             <h3>Been there, done that</h3>
@@ -59,7 +65,10 @@ function createItemCard(item) {
     </div>
     `
     const deleteButton = itemCard.getElementsByClassName("delete-item-btn")[0];
+    const toggleButton = itemCard.getElementsByClassName("toggle__input")[0];
+   
     deleteButton.addEventListener('click', () => deleteItem(item.category, item.id));
+    toggleButton.addEventListener('click', (e) => console.log("hello") || updateItem(e, item.category));
     itemsContainer.appendChild(itemCard)
 }
 
@@ -68,5 +77,4 @@ export function displayItems(arr) {
     for (let i = 0; i < arr.length; i++) {
         createItemCard(arr[i])
     }
-}
-
+};
