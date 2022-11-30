@@ -1,11 +1,35 @@
-const  items = require('./db.json')
+require('dotenv').config();
+
+const {CONNECTION_STRING} = process.env;
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize(CONNECTION_STRING, {
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+});
+
+//const  items = require('./db.json')
+
 let globalID = 31;
 
 const getItemsByCategory = (req, res) => {
-
+    console.log('called');
     const category = req.params.category;
-    const filteredItems = items.filter(item => item.category === category)
-    res.status(200).send(filteredItems)
+    sequelize.query(`SELECT * FROM items 
+    WHERE category = '${category}';`)
+        .then(dbRes => {
+            console.log(dbRes)
+            res.status(200).send(dbRes[0])} )
+        .catch(err => console.log(err))
+
+    // JS for require('./db.json' 
+    // const category = req.params.category;
+    // const filteredItems = items.filter(item => item.category === category)
+    // res.status(200).send(filteredItems)
 };
 
 const createItem = (req, res) => {
