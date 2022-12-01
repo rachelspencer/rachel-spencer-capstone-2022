@@ -85,7 +85,8 @@ const updateItem = (req, res) => {
     const { category, id } = req.params;
     sequelize.query(`UPDATE items
     SET completed = true
-    WHERE id = '${id}';`)
+    WHERE id = '${id}'
+    ORDER BY id DESC;`)
     .then(dbRes => {
         console.log(dbRes)
         res.status(200).send(dbRes[0])} )

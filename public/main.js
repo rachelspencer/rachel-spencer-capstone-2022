@@ -12,9 +12,6 @@ const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body
 const deleteItem = (category, id) => axios.delete(`${baseURL}/${category}/${id}`).then(() => getItemsByCategory(category)).catch(errCallBack);
 
 const updateItem = (e, category, id) => {
-    e.stopPropagation();
-    console.log(id)
-    console.log(e.target);
     axios.put(`${baseURL}/${category}/${e.target.name}`).then(() => getItemsByCategory(category)).catch(errCallBack);
 }
 
@@ -44,18 +41,18 @@ function createItemCard(item) {
     const itemCard = document.createElement('div')
     itemCard.classList.add('item-card')
 
-    itemCard.innerHTML = `<img alt="item cover" src=${item.imageURL} class="item-cover"/>
+    itemCard.innerHTML = `<img alt="item cover" src=${item.imageurl} class="item-cover"/>
     <div class="item-details"
         <section id="item-title"
             <p>${item.name}</p>
         </section>
         <section id="item-recommend"
-            <p><span>Recommended by: </span>${item.recommendedBy}</p>
+            <p><span>Recommended by: </span>${item.recommendedby}</p>
         </section>
         <div class="status-section">
             <label class="toggle" for="myToggle-${item.id}">
-                <input name=${item.id} "checked=${item.completed} class="toggle__input" type="checkbox" id="myToggle-${item.id}">
-                <div class="toggle__fill"></div>
+                <input name=${item.id} ${item.completed ? 'checked' : ''} class="toggle__input" type="checkbox" id="myToggle-${item.id}">
+                <div class="toggle__fill" ≈></div>
             </label>
             <h3>Been there, done that</h3>
         </div>
@@ -68,7 +65,7 @@ function createItemCard(item) {
     const toggleButton = itemCard.getElementsByClassName("toggle__input")[0];
    
     deleteButton.addEventListener('click', () => deleteItem(item.category, item.id));
-    toggleButton.addEventListener('click', (e) => console.log("hello") || updateItem(e, item.category));
+    toggleButton.addEventListener('click', (e) => updateItem(e, item.category));
     itemsContainer.appendChild(itemCard)
 }
 
