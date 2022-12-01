@@ -8,14 +8,14 @@ const errCallBack = err => console.log(err);
 
 // API Calls
 export const getItemsByCategory = (category) => axios.get(baseURL + "/" + category).then(successCallBack).catch(errCallBack);
-const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body).then(successCallBack).catch(errCallBack);
-const deleteItem = (category, id) => axios.delete(`${baseURL}/${category}/${id}`).then(successCallBack).catch(errCallBack);
+const createItem = (category, body) => axios.post(`${baseURL}/${category}`, body).then(() => getItemsByCategory(category)).catch(errCallBack);
+const deleteItem = (category, id) => axios.delete(`${baseURL}/${category}/${id}`).then(() => getItemsByCategory(category)).catch(errCallBack);
 
 const updateItem = (e, category, id) => {
     e.stopPropagation();
     console.log(id)
     console.log(e.target);
-    axios.put(`${baseURL}/${category}/${e.target.name}`).then(successCallBack).catch(errCallBack);
+    axios.put(`${baseURL}/${category}/${e.target.name}`).then(() => getItemsByCategory(category)).catch(errCallBack);
 }
 
 // Event handlers
