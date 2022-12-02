@@ -80,15 +80,14 @@ const deleteItem = (req, res) => {
     //return res.status(200).send(items.filter(item => item.category === category))  
 };
 
-
-
-
 const updateItem = (req, res) => {
     //const items = require('./db.json');
     const { category, id } = req.params;
     sequelize.query(`UPDATE items 
-    SET completed = true 
-    WHERE id = ${id};`)
+    SET completed =NOT completed 
+    WHERE id = ${id}
+    RETURNING *`)
+    sequelize.query(`ORDER BY id ASC`)
     .then(dbRes => {
         console.log("id", id)
         res.status(200).send(dbRes[0])} )
