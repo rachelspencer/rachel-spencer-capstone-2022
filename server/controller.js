@@ -16,8 +16,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 
 let globalID = 31;
 
-const getItemsByCategory = (req, res) => {
-   
+const getItemsByCategory = (req, res) => {   
     const category = req.params.category;
     sequelize.query(`SELECT * FROM items 
     WHERE category = '${category}';`)

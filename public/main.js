@@ -42,11 +42,11 @@ function createItemCard(item) {
     itemCard.classList.add('item-card')
 
     itemCard.innerHTML = `<img alt="item cover" src=${item.imageurl} class="item-cover"/>
-    <div class="item-details"
-        <section id="item-title"
+    <div class="item-details">
+        <section id="item-title">
             <p>${item.name}</p>
         </section>
-        <section id="item-recommend"
+        <section id="item-recommend">
             <p><span>Recommended by: </span>${item.recommendedby}</p>
         </section>
         <div class="status-section">
@@ -57,7 +57,9 @@ function createItemCard(item) {
             <h3>Been there, done that</h3>
         </div>
         
-        <button class="delete-item-btn">x</button>
+        <button class="delete-item-btn">
+            <div>x</div>
+        </button>
         
     </div>
     `
@@ -75,3 +77,45 @@ export function displayItems(arr) {
         createItemCard(arr[i])
     }
 };
+
+export function assignActiveClass() {
+    // add window load event listener
+    window.addEventListener('load', () => {
+        // get window location pathname // / split pathname into segments
+
+        const windowPath = window.location.pathname.split('/')
+    
+        // store last piece of segment in var
+        const windowPathNameHREF = windowPath[2]
+        console.log("windowPathNameHREF", windowPathNameHREF)
+        // select anchor tag whose href attr is equal to path var
+        // querySelectorAll([href=`./${}`])
+        const activeHREF = document.querySelectorAll(`[href="./${windowPathNameHREF}"]`)[0];
+        console.log("activeHREF", activeHREF)
+        // add active class to that anchor tag
+        activeHREF.classList.add('active');
+        console.log('loaded', window.location.pathname);
+    });
+
+}
+// export function addNavLinkActiveClass() {
+//     // const navLinks = select all nav links w/ document.getElementsByClassname()
+//     const navLinks = document.querySelectorAll('.crumb')
+//     console.log(navLinks)
+
+//     const onNavLinkClickTheme = (e) => {
+//         e.preventDefault();
+//         const clickedLink = e.target;
+//         const href = clickedLink.attributes['href'];
+//         console.log(clickedLink.attributes['href'])
+//         navLinks.forEach(link => {
+//             link.classList.remove('active');
+//         });
+//         clickedLink.classList.add('active');
+//         window.location = `/public/must_tries.html`
+//     }
+
+//     for (let i = 0; i < navLinks.length; i++) {
+//         navLinks[i].addEventListener('click', onNavLinkClickTheme)
+//     }
+// };

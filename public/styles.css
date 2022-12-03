@@ -6,7 +6,7 @@
 nav {
     height: 50px;
 	padding-top: 12px;
-    background-color: rgb(217, 217, 217);
+    background-color: rgb(71, 113, 112);
 }
 
 ul {
@@ -17,17 +17,28 @@ ul {
 	display: inline;
 }
 
+
 a {
     text-decoration: none;
     color: white;
+    text-shadow: rgb(71, 113, 112) 4px 0 15px;
     font-family:'Lato', sans-serif;
     font-weight: 300;
     font-size: 25px;
 	margin: 50px;
 }
 
+.active {
+    color: black;
+    font-family:'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+	margin: 50px;
+}
+
 h1 {
     color: white;
+    text-shadow: rgb(71, 113, 112) 4px 0 15px;
     font-family:'Lato', sans-serif;
     font-weight: 700;
     font-size: 100px;
@@ -41,6 +52,7 @@ h1 {
 
 h2 {
     color: white;
+    text-shadow: rgb(71, 113, 112) 4px 0 15px;
     font-family:'Lato', sans-serif;
     font-weight: 400;
     font-size: 50px;
@@ -85,8 +97,8 @@ input[type='text'] {
 	border-radius: 4px;
     background-color: white;
 	font-family:'Lato', sans-serif;
-	color: #232323;
-    font-weight: 300;
+	color: black;
+    font-weight: 400;
     font-size: 16px;
 }
 
@@ -99,7 +111,7 @@ input[type='text'] {
 	background-color: rgb(175, 192, 192);
 	font-family:'Lato', sans-serif;
 	color: #232323;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     cursor: pointer;
 }
@@ -113,7 +125,7 @@ input[type='text'] {
 .item-card {
     background-color: white;
     width: 300px;
-	height: 380px;
+	height: 390px;
     margin: 20px; 
     display: flex;
     flex-direction: column;
@@ -140,13 +152,16 @@ input[type='text'] {
     margin: 20px 20px;
 }
 
-#item-title {
+#item-title { 
     font-family:'Lato', sans-serif;
 	color: #232323;
+    width: 260px;
+    height: 50px;
     font-weight: 400;
     font-size: 25px;
-   
+    padding-bottom: 8px;
 }
+
 #item-recommend {
     font-family:'Lato', sans-serif;
 	color: #232323;
@@ -226,4 +241,10 @@ input[type='text'] {
     font-weight: 300;
     font-size: 16px; 
     cursor: pointer;
+}
+
+.delete-item-btn > div {
+    line-height: .6px;
+    margin-bottom: 2.5px;
+    margin-right: 1px;
 }
