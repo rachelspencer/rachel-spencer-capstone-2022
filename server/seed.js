@@ -1,18 +1,22 @@
 require('dotenv').config();
-const {CONNECTION_STRING} = process.env;
+const { DATABASE_URL } = process.env;
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize(CONNECTION_STRING, {
-    dialect: 'postgres',
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
+const sequelize = new Sequelize(DATABASE_URL , {
+    dialect: 'postgres', // Use the appropriate dialect for your database
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000,
+    },
+    define: {
+        timestamps: false,
+    },
 });
 
 module.exports = {
-    seed: (req, res) => {
+    seed: () => {
         sequelize.query(`
         drop table if exists items;
 
@@ -58,7 +62,6 @@ module.exports = {
                 ('foodAndBev', 'Roccos', 'Rachel', 'https://content.api.news/v3/images/bin/0c259d10c2e2e13672f58658dd5f0b33', false);
         `).then(() => {
             console.log('DB seeded!')
-            res.sendStatus(200)
         }).catch(err => console.log('error seeding DB', err))
     }
 };
