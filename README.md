@@ -8,4 +8,9 @@ the oldest rainforests on Earth, estimated to be around 180 million years old. B
 This app is designed to assist travelers who are planning to visit Cairns. It not only lists some pretty cool adventure activities, but it is also an inventory for restuarants, bars and 'must tries' to do in Cairns. 
 I was born and raised in this tropical paradise, so I am leaking some secret local knowledge here (🤫). 
 
+## Watch the demo video!
 *Note I am activily working on this README.md, so stay tuned for more info on how to use it!
+
+## Usage
+
+## Installation 
