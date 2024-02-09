@@ -7,7 +7,7 @@ const sequelize = new Sequelize(DATABASE_URL, {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, // Adjust SSL configuration based on your needs
+        rejectUnauthorized: false,
       },
     },
     define: {
