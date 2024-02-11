@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const {SERVER_PORT} = process.env;
+const {SERVER_PORT} = process.env || 3000;
 const {seed} = require('./seed.js');
 const { sequelize, getItemsByCategory, createItem, deleteItem, updateItem } = require('./controller'); 
 
