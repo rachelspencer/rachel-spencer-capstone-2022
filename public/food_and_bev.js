@@ -4,7 +4,10 @@ console.log("connected");
 const itemsContainer = document.querySelector('#items-container')
 const form = document.querySelector('form')
 
-const baseURL = `http://localhost:4005/api/items`;
+// local
+// const baseURL = `http://localhost:4005/api/items`;
+// dev
+const baseURL = `https://cairns-app-0c4d4c59b297.herokuapp.com`
 
 const itemsCallBack = (res) => displayItems(res.data)
 const errCallBack = err => console.log(err.response.data)
