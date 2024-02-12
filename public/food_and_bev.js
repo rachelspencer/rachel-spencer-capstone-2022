@@ -7,7 +7,7 @@ const form = document.querySelector('form')
 // local
 // const baseURL = `http://localhost:4005/api/items`;
 // dev
-const baseURL = `https://cairns-app-0c4d4c59b297.herokuapp.com/api/items`
+const baseURL = `/api/items`
 
 const itemsCallBack = (res) => displayItems(res.data)
 const errCallBack = err => console.log(err.response.data)
