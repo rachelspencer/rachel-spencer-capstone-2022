@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const path = require('path')
 const cors = require('cors');
 const {PORT} = process.env || 3000;
 const {seed} = require('./seed.js');
@@ -18,6 +19,10 @@ sequelize
 
     // Seed the database (call the seed function)
     seed();
+
+    app.get('/', function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"))
+    });
 
     // Define your routes after the database connection and seeding
     app.get(`/api/items/:category`, getItemsByCategory);
