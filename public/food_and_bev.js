@@ -7,7 +7,7 @@ const form = document.querySelector('form')
 // local
 // const baseURL = `http://localhost:4005/api/items`;
 // dev
-const baseURL = `/api/items`
+const baseURL = `/items`
 
 const itemsCallBack = (res) => displayItems(res.data)
 const errCallBack = err => console.log(err.response.data)
