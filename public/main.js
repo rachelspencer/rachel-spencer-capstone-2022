@@ -1,7 +1,7 @@
 // local
 // const baseURL = `http://localhost:4005/api/items`;
 // dev
-const baseURL = `https://cairns-app-0c4d4c59b297.herokuapp.com`
+const baseURL = `https://cairns-app-0c4d4c59b297.herokuapp.com/api/items`
 
 const itemsContainer = document.querySelector('#items-container');
 
