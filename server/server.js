@@ -2,11 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const {SERVER_PORT} = process.env || 3000;
+const {PORT} = process.env || 3000;
 const {seed} = require('./seed.js');
 const { sequelize, getItemsByCategory, createItem, deleteItem, updateItem } = require('./controller'); 
 
-console.log("this is the  server port:", SERVER_PORT);
+console.log("this is the  server port:", PORT);
 
 app.use(cors());
 app.use(express.json());
@@ -26,8 +26,8 @@ sequelize
     app.put(`/api/items/:category/:id`, updateItem);
 
     // Start the server
-    app.listen(SERVER_PORT, () => {
-      console.log(`Server is running on port ${SERVER_PORT}.`);
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}.`);
     });
   })
   .catch((error) => {
