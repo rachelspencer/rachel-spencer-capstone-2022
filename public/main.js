@@ -1,7 +1,7 @@
 // local
 // const baseURL = `http://localhost:4005/api/items`;
 // dev
-const baseURL = `/api/items`
+const baseURL = `/items`
 
 const itemsContainer = document.querySelector('#items-container');
 
