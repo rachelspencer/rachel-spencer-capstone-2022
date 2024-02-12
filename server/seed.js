@@ -67,7 +67,7 @@ module.exports = {
                 ('foodAndBev', 'The Conservatory bar', 'Rachel', 'https://cairnscalendar.com.au/wp-content/uploads/2021/01/The-Conservatory-Bar-2.jpg', false),
                 ('foodAndBev', 'Roccos', 'Rachel', 'https://content.api.news/v3/images/bin/0c259d10c2e2e13672f58658dd5f0b33', false);
         `).then(() => {
-            console.log('DB seeded!')
-        }).catch(err => console.log('error seeding DB', err))
+            console.log('DB seeded, seed.js!')
+        }).catch(err => console.log('error seeding DB, seed.js', err))
     }
 };
