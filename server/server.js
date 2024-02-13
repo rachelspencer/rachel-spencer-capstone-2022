@@ -14,8 +14,8 @@ app.use(express.json());
 
 const routes = [
     {route: '/', file: '../public/index.html'},
-    {routes: '/styles', file: '../public/index.css'},
-    {routes: '/js', file: '../public/main.js'},
+    {route: '/styles', file: '../public/index.css'},
+    {route: '/js', file: '../public/main.js'},
 
 ];
 
