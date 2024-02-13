@@ -14,8 +14,8 @@ app.use(express.json());
 
 const routes = [
     {route: '/', file: '../public/index.html'},
-    {routes: '/styles', file: '../public/index.css'},
-    {routes: '/js', file: '../public/main.js'},
+    {route: '/styles', file: '../public/index.css'},
+    {route: '/js', file: '../public/main.js'},
 
 ];
 
@@ -32,18 +32,6 @@ sequelize
 
     // Seed the database (call the seed function)
     seed();
-
-    // app.get('/', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/index.html"))
-    // });
-
-    // app.get('/styles', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/index.css"))
-    // });
-
-    // app.get('/js', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/main.js"))
-    // })
 
     // Define your routes after the database connection and seeding
     app.get(`/api/items/:category`, getItemsByCategory);
