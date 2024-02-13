@@ -16,7 +16,9 @@ const routes = [
     {route: '/', file: '../public/index.html'},
     {route: '/styles', file: '../public/index.css'},
     {route: '/js', file: '../public/main.js'},
-
+    {route: 'activities.js', file: '../public/activities.js'},
+    {route: 'food_and_bev2.js', file: '../public/food_and_bev2.js'},
+    {route: 'must-tries.js', file: '../public/must-tries.js'},
 ];
 
 routes.forEach(({ route, file }) => {
