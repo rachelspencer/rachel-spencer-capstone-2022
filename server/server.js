@@ -16,9 +16,9 @@ const routes = [
     {route: '/', file: '../public/index.html'},
     {route: '/styles', file: '../public/index.css'},
     {route: '/js', file: '../public/main.js'},
-    {route: '/activities', file: '../public/activities.js'},
-    {route: '/food_and_bev2', file: '../public/food_and_bev2.js'},
-    {route: '/must-tries', file: '../public/must-tries.js'},
+    {route: '/activities', file: '../public/activities.html'},
+    {route: '/food_and_bev2', file: '../public/food_and_bev2.html'},
+    {route: '/must-tries', file: '../public/must-tries.html'},
 ];
 
 routes.forEach(({ route, file }) => {
@@ -37,6 +37,10 @@ sequelize
 
     // app.get('/', function(req, res) {
     //     res.sendFile(path.join(__dirname, "../public/index.html"))
+    // });
+
+    // app.get('/activities', function(req, res) {
+    //     res.sendFile(path.join(__dirname, "../public/activities.html"))
     // });
 
     // app.get('/styles', function(req, res) {
