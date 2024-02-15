@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 // const baseURL = process.env === 'production' ? '/items' : 'http://localhost:4005/api/items';
 
 // local
