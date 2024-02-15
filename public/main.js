@@ -1,4 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
+// ... rest of your code
+
 
 // const baseURL = process.env === 'production' ? '/items' : 'http://localhost:4005/api/items';
 
