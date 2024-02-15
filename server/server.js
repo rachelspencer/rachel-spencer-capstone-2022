@@ -7,28 +7,13 @@ const {PORT} = process.env || 3000;
 const {seed} = require('./seed.js');
 const { sequelize, getItemsByCategory, createItem, deleteItem, updateItem } = require('./controller'); 
 
+
 console.log("this is the  server port:", PORT);
 
 app.use(cors());
 app.use(express.json());
 
-const routes = [
-    {route: '/', file: '../public/index.html'},
-    {route: '/styles', file: '../public/index.css'},
-    {route: '/js', file: '../public/main.js'},
-    {route: '/activitiesJs', file: '../public/activities.js'},
-    {route: '/foodAndBevJs', file: '../public/food_and_bev2.js'},
-    {route: '/mustTriesJs', file: '../public/must-tries.js'},
-    {route: '/activities', file: '../public/activities.html'},
-    {route: '/food_and_bev2', file: '../public/food_and_bev2.html'},
-    {route: '/must-tries', file: '../public/must-tries.html'},
-];
-
-routes.forEach(({ route, file }) => {
-    app.get(route, (req, res) => {
-      res.sendFile(path.join(__dirname, file));
-    });
-  });
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 sequelize
   .sync() // This will create the tables if they do not exist
