@@ -23,9 +23,9 @@ sequelize
     // Seed the database (call the seed function)
     seed();
 
-    // app.get('/', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/index.html"))
-    // });
+    app.get('/', function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"))
+    });
 
     // app.get('/activities', function(req, res) {
     //     res.sendFile(path.join(__dirname, "../public/activities.html"))
