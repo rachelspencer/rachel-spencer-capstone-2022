@@ -6,8 +6,6 @@
   "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "parcel index.html",
-    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
