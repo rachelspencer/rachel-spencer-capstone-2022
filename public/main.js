@@ -1,9 +1,9 @@
 // const baseURL = process.env === 'production' ? '/items' : 'http://localhost:4005/api/items';
 
 // local
-// const baseURL = `http://localhost:4005/api/items`;
+const baseURL = `http://localhost:4005/api/items`;
 // dev
-const baseURL = `/items`
+// const baseURL = `/items`
 
 const itemsContainer = document.querySelector('#items-container');
 
