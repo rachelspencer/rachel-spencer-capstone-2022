@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const cors = require('cors');
+// const {BASEURL} = process.env || BASEURL;
 const {PORT} = process.env || 3000;
 const {seed} = require('./seed.js');
 const { sequelize, getItemsByCategory, createItem, deleteItem, updateItem } = require('./controller'); 
