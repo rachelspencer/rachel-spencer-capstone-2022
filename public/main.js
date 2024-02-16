@@ -1,7 +1,7 @@
-// const baseURL = process.env === 'production' ? '/items' : 'http://localhost:4005/api/items';
+const baseURL = 'https://cairns-app-0c4d4c59b297.herokuapp.com/api/items';
 
 // local
-const baseURL = `http://localhost:4005/api/items`;
+// const baseURL = `http://localhost:4005/api/items`;
 // dev
 // const baseURL = `/items`
 
