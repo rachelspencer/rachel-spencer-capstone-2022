@@ -22,6 +22,7 @@ I was born and raised in this tropical paradise, so I am leaking some secret loc
 Note:
 You will have to create a .env file. Inside of it create the following:
 - `PORT`=
-= `URI`=
+
+- `URI`=
 
 Replace the `PORT` with what ever you'd like to use. For the `URI` value replace this with a postgress db connection string.
