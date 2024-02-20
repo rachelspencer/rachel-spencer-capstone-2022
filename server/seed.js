@@ -1,25 +1,31 @@
 require('dotenv').config();
-const { URI } = process.env 
+const { NODE_ENV, URI } = process.env 
 const Sequelize = require('sequelize');
-
-const sequelize = new Sequelize(URI, {
-    dialect: 'postgres',
+const isDevelopment = NODE_ENV === 'development';
+const envSpecificConfig = isDevelopment 
+  ? {}
+  : {
     dialectOptions: {
       ssl: {
         require: true,
         rejectUnauthorized: false, 
       },
     },
-    define: {
-      timestamps: false,
-    },
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000,
-    },
-  });
+  };
+  
+const sequelize = new Sequelize(URI, {
+  dialect: 'postgres',
+  ...envSpecificConfig,
+  define: {
+    timestamps: false,
+  },
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  }
+});
 
 module.exports = {
     seed: () => {
