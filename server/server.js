@@ -20,12 +20,7 @@ sequelize
   .then(() => {
     console.log('Database connected.');
 
-    // Seed the database (call the seed function)
     seed();
-
-    // app.get('/', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/index.html"))
-    // })
 
     app.get('/', (req, res) => {
       res.render('pages/index', { isDevelopment: process.env.NODE_ENV === 'development' });
@@ -42,18 +37,6 @@ sequelize
     app.get('/must_tries', (req, res) => {
       res.render('pages/must_tries', { isDevelopment: process.env.NODE_ENV === 'development' });
     });
-
-    // app.get('/activities', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/activities.html"))
-    // });
-
-    // app.get('/styles', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/index.css"))
-    // });
-
-    // app.get('/js', function(req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/main.js"))
-    // })
 
     // Define your routes after the database connection and seeding
     app.get(`/api/items/:category`, getItemsByCategory);
