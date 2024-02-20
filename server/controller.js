@@ -26,7 +26,6 @@ const envSpecificConfig = isDevelopment
       idle: 10000,
     },
   };
-  console.log('CONFIG HA!', config);
 
 const sequelize = new Sequelize(URI, config);
 
