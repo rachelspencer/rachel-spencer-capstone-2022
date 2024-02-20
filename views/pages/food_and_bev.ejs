@@ -12,10 +12,10 @@
 </head>
 <nav>
     <ul>
-        <li class="crumb"><a class="crumb-link" href="./index.html">Home</a></li>
-        <li class="crumb"><a class="crumb-link" href="./activities.html">Activities</a></li>
-        <li class="crumb"><a class="crumb-link" href="./food_and_bev.html">Food & Bev</a></li>
-        <li class="crumb"><a class="crumb-link" href="./must_tries.html">Must-Tries</a></li>
+        <li class="crumb"><a class="crumb-link" href="/">Home</a></li>
+        <li class="crumb"><a class="crumb-link" href="/activities">Activities</a></li>
+        <li class="crumb"><a class="crumb-link" href="/food_and_bev">Food & Bev</a></li>
+        <li class="crumb"><a class="crumb-link" href="/must_tries">Must-Tries</a></li>
     </ul>
 </nav>
 <body>
@@ -42,7 +42,10 @@
     <section type="text" id="items-container"></section>
 </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="module" src="main.js"></script>
-    <script type="module" src="food_and_bev2.js"></script>
+    <script type="module" src="main.js" defer></script>
+    <script type="module" src="food_and_bev2.js" defer></script>
+    <script>
+        const isDevelopment = <%= isDevelopment %>;
+    </script>
 </body>
 </html>
