@@ -4,12 +4,6 @@ const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(URI, {
     dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
     define: {
       timestamps: false,
     },
@@ -47,7 +41,7 @@ module.exports = {
                 ('activities', 'Pig Pens Wharf', 'Rachel', 'https://live-production.wcms.abc-cdn.net.au/007e5c9f511967dc4211bc35125f9933?impolicy=wcms_crop_resize&cropH=360&cropW=640&xPos=0&yPos=0&width=862&height=485', false),
                 ('activities', 'Tobruk Pool', 'Rachel', 'https://www.commercialaquatics.com.au/wp-content/uploads/2016/10/Tobruk-Pool-6.jpg', false),
                 ('must-try', 'Lamingtons', 'Rachel', 'https://img.bestrecipes.com.au/zvznhs4F/br/2020/10/vegemite-lamingtons-960335-2.jpg', false),
-                ('must-try', 'Camp Oven Roast', 'Rachel', 'https://www.snowys.com.au/blog/wp-content/uploads/2017/04/Camping-oven-Coleman.jpg', false),
+                ('must-try', 'Camp Oven Roast', 'Rachel', 'https://i0.wp.com/4wdadventurer.com/wp-content/uploads/2021/09/B9209F0E-8CCE-4D9D-8E11-84CC4B3EB0AE-scaled.jpeg?fit=2560%2C2560&ssl=1', false),
                 ('must-try', 'Jaffles', 'Rachel', 'https://img.delicious.com.au/TilWOR1U/del/2018/10/chicken-parfait-sage-and-caramelised-onion-jaffle-89133-2.jpg', false),
                 ('must-try', 'Crumpets', 'Rachel', 'https://img.taste.com.au/vyCV2b0K/taste/2016/11/gluten-free-crumpets-98679-1.jpeg', false),
                 ('must-try', 'Meat Pie from Piefection', 'Rachel', 'https://content.api.news/v3/images/bin/cd2a5c3a62e92895fe85d56222a082fa', false),

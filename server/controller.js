@@ -4,12 +4,6 @@ const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(URI, {
     dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, 
-      },
-    },
     define: {
       timestamps: false,
     },
