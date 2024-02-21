@@ -25,14 +25,17 @@
     </header>
 <main>
     <form>
+        <label for="food-and-bev-name" class="visually-hidden"> Enter a restaurantor bar name</label>
         <input
             type="text"
-            id="name"
+            id="food-and-bev-name"
             placeholder="Restaurant/Bar Name">
+        <label for="recommended-by" class="visually-hidden">Recommended by</label>
         <input
             type="text"
             id="recommended-by"
             placeholder="Recommended by">
+        <label for="image-URL" class="visually-hidden">Paste an image URL</label>
         <input
             type="text"
             id="image-URL"
@@ -43,7 +46,7 @@
 </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="main.js" defer></script>
-    <script type="module" src="food_and_bev2.js" defer></script>
+    <script type="module" src="food_and_bev.js" defer></script>
     <script>
         const isDevelopment = <%= isDevelopment %>;
     </script>
