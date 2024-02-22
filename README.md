@@ -46,3 +46,9 @@ environment, you will need to alter setp 7. to open the cloned repo.
 The project is now cloned locally, but before you can run `npm start` you will need to set up a local `.env` file and add some environment variables. 
 
 ### Creating your `.env` file
+In the root of the project, create a `.env` file. You will need to add three items here:
+1. PORT=4005
+2. URI=
+3. NODE_ENV=development
+
+NODE_ENV must be set to `development` and set the `PORT` variable to `4005`. The `URI` can be replaced with a postgresql database connection string. 
