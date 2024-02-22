@@ -22,7 +22,7 @@ or using a Node version manager like [nvm](https://github.com/nvm-sh/nvm) on a m
 You can check if you have it already installed by running `node -v` in your terminal. You will need it for this project to run, so don't skip this!
 
 You will also need to make sure you have Visual Studios installed, check by running `code --version`. If you don't have it [download it from VS Code](https://code.visualstudio.com/download). If you use another development 
-environment, you will beed to alter setp 7. to open the cloned repo. 
+environment, you will need to alter setp 7. to open the cloned repo. 
 
 ### Clone the project locally
 1. Click on the "Code" tab on this repo's "Code" page.
