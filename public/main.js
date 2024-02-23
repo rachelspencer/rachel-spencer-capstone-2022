@@ -1,8 +1,6 @@
 
 const baseURL = isDevelopment ? `http://localhost:4005/api/items` : `https://cairns-app-0c4d4c59b297.herokuapp.com/api/items`;
 
-console.log("baseURL", baseURL);
-
 const itemsContainer = document.querySelector('#items-container');
 
 // Promise handlers
@@ -90,11 +88,11 @@ export function assignActiveClass() {
     
         // store last piece of segment in var
         const windowPathNameHREF = windowPath[2]
-        console.log("windowPathNameHREF", windowPathNameHREF)
+        // console.log("windowPathNameHREF", windowPathNameHREF)
         // select anchor tag whose href attr is equal to path var
         // querySelectorAll([href=`./${}`])
         const activeHREF = document.querySelectorAll(`[href="./${windowPathNameHREF}"]`)[0];
-        console.log("activeHREF", activeHREF)
+        // console.log("activeHREF", activeHREF)
         // add active class to that anchor tag
         activeHREF.classList.add('active');
         console.log('loaded', window.location.pathname);
