@@ -16,6 +16,7 @@ item, they can mark it off as done. Here's some screenshots to elaborate...
 *Note I am activily working on this README.md, so stay tuned for more info on how to use it!
 
 ## How it works
+Adding an item
 1. Visit wwww.visitingcairns.com
 2. Mouse click on either "Activities", "Food and Bev", or "Must-tries". For this example we'll enter through "Activities".
  <img width="1709" alt="Enter site" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/45291313-3fa4-4ec6-9a0c-acb2dcd7780f">
@@ -26,6 +27,22 @@ Activities page:
 As mentioned, this app comes pre-loaded with data, but you can also add do its inventory. The next steps will outline how to add another activity, the steps are the same for the other two pages.
 3. Enter a title for the activity, the name of who recommebded the activity, and then a url link for an image associated with this activity. After, mouse click on "Add". The new activity will appear at the bottom.
 <img width="1707" alt="Add activity" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/4d3a539b-59b5-4d4e-90bd-4205944428cc">
+
+New item added at the bottom:
+<img width="1697" alt="Show new add" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/ccde388a-3be5-4ed0-80bd-46f4bf0a7212">
+
+Making off an item
+On every item card there is a "Been there, done that" section with a toggle switch. Once an item has been done, the user can click this toggle to indicate this status. I'll demonstrate this
+from the Must-tries page.
+Toggle before:
+<img width="1703" alt="Not done" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/cd312a62-4b61-414b-8597-0dc3d52f1ae5">
+
+Toggle after:
+<img width="1703" alt="Done" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/6bcb9363-ff11-4273-ac75-ec1c6ca8c43e">
+
+Deleting an item
+On every item card there is a `x` button. Clicking this will delete the item card.
+<img width="1701" alt="Delete" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/3f44cdcd-bdbc-4d87-92fd-d37da2aef3fc">
 
 ## Installation
 `npm` is distributed with Node.js, which means that when you download Node.js, you automatically get `npm` installed on your computer. You can install Node by [downloading it from the Node.js website](https://nodejs.org/en/) 
