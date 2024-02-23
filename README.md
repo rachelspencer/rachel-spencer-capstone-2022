@@ -1,4 +1,4 @@
-# Cairns Travel App 
+# Explore Cairns
 
 First a bit about Cairns, Australia
 Have you visited Cairns? This regional town is positioned in the 'Far North' of Queensland in Australia and is often refered to a FNQ Cairns. 
@@ -15,13 +15,25 @@ item, they can mark it off as done. Here's some screenshots to elaborate...
 ## Watch the demo video!
 *Note I am activily working on this README.md, so stay tuned for more info on how to use it!
 
-## Usage
+## How it works
+1. Visit wwww.visitingcairns.com
+2. Mouse click on either "Activities", "Food and Bev", or "Must-tries". For this example we'll enter through "Activities".
+ <img width="1709" alt="Enter site" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/45291313-3fa4-4ec6-9a0c-acb2dcd7780f">
+
+Activities page:
+<img width="1708" alt="Activities page" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/226ba480-9929-493c-97b3-cc5d38537236">
+
+As mentioned, this app comes pre-loaded with data, but you can also add do its inventory. The next steps will outline how to add another activity, the steps are the same for the other two pages.
+3. Enter a title for the activity, the name of who recommebded the activity, and then a url link for an image associated with this activity. After, mouse click on "Add". The new activity will appear at the bottom.
+<img width="1707" alt="Add activity" src="https://github.com/rachelspencer/rachel-spencer-capstone-2022/assets/111473039/4d3a539b-59b5-4d4e-90bd-4205944428cc">
+
+## Installation
 `npm` is distributed with Node.js, which means that when you download Node.js, you automatically get `npm` installed on your computer. You can install Node by [downloading it from the Node.js website](https://nodejs.org/en/) 
 or using a Node version manager like [nvm](https://github.com/nvm-sh/nvm) on a macOS or Linux device or [nvm-windows](https://github.com/coreybutler/nvm-windows) on a Windows device.
 
 You can check if you have it already installed by running `node -v` in your terminal. You will need it for this project to run, so don't skip this!
 
-You will also need to make sure you have Visual Studios installed, check by running `code --version`. If you don't have it [download it from VS Code](https://code.visualstudio.com/download). If you use another development 
+You will also need to make sure you have Visual Studio Code installed, check by running `code --version`. If you don't have it [download it from VS Code](https://code.visualstudio.com/download). If you use another development 
 environment, you will need to alter setp 7. to open the cloned repo. 
 
 ### Clone the project locally
@@ -45,10 +57,26 @@ environment, you will need to alter setp 7. to open the cloned repo.
 
 The project is now cloned locally, but before you can run `npm start` you will need to set up a local `.env` file and add some environment variables. 
 
-### Creating your `.env` file
+### Usage
+Creating your `.env` file
 In the root of the project, create a `.env` file. You will need to add three items here:
 1. PORT=4005
 2. URI=
 3. NODE_ENV=development
 
 NODE_ENV must be set to `development` and set the `PORT` variable to `4005`. The `URI` can be replaced with a postgresql database connection string. 
+
+Once you have your `.env` file created you can follow these steps to use the project locally:
+1. Run the application: `npm start`
+2. Open your browser and navigate to `http://localhost:4005`
+
+## Contributing
+If you want to contribute to this project, please follow these guidelines:
+- Fork the repository
+- Create a new branch: `git checkout -b feature/new-feature`
+- Commit your changes: `git commit -m 'Add new feature'`
+- Push to the branch: `git push origin feature/new-feature`
+- Submit a pull request
+
+## Contact
+If you'd like to contact me to talk about this project you can email me at rachel.kay.spencer@gmail.com. 
