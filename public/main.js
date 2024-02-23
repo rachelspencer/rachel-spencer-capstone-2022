@@ -94,8 +94,8 @@ export function assignActiveClass() {
         const activeHREF = document.querySelectorAll(`[href="./${windowPathNameHREF}"]`)[0];
         // console.log("activeHREF", activeHREF)
         // add active class to that anchor tag
-        activeHREF.classList.add('active');
-        console.log('loaded', window.location.pathname);
+        // activeHREF.classList.add('active');
+        // console.log('loaded', window.location.pathname);
     });
 
 }
