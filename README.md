@@ -7,7 +7,7 @@ along the northeast coast of Australia. Sounds good? Its gets better! The Daintr
 the oldest rainforests on Earth, estimated to be around 180 million years old. Both of the natural wonders contribute to Cairns being a popular destination for nature lovers and adventure seekers. 
 
 What does this app do?
-This app is designed to assist travelers who are planning to visit Cairns. It comes pre-loaded with cards that list adventure activities, restuarants, bars and 'must tries' to do in Cairns. 
+This app is designed to assist travelers who are planning to visit Cairns. It comes pre-loaded with cards that list adventure activities, restaurants, bars and 'must tries' to do in Cairns. 
 I was born and raised in this tropical paradise, so I am leaking some secret local knowledge here (🤫). The app has functionality for the user to add more items. If the user has completed an 
 item, they can mark it off as done. Here's some screenshots to elaborate...
 
