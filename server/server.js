@@ -7,7 +7,6 @@ const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 const {seed} = require('./seed.js');
 const { sequelize, getItemsByCategory, createItem, deleteItem, updateItem } = require('./controller'); 
-const favicon = require('express-favicon');
 
 console.log("this is the  server port:", PORT);
 app.set('view engine', 'ejs');
@@ -15,7 +14,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
-app.use(favicon(path.join(__dirname, '..', '..', 'favicon.ico')));
 
 sequelize
   .sync() // This will create the tables if they do not exist
